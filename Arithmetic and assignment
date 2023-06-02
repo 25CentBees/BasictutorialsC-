@@ -1,0 +1,82 @@
+#include <iostream>
+
+int main() {
+
+	//Generating variables; a which is assigned the number 7, b which is assigned the number 13, and answer which is assigned the number 0.
+	int a = 7;
+	int b = 13;
+	int answer = 0;
+
+	//Adding 1 to the variable answer.
+	answer++;
+	//Displaying the formula and answer here.
+	std::cout << "answer++ = " << answer << "\n";
+	//subtracting 1 to the variable answer.
+	answer--;
+	//Displaying the formula and answer here.
+	std::cout << "answer-- = " << answer << "\n";
+	//Adding 1 to the variable answer.
+	++answer;
+	//Displaying the formula and answer here.
+	std::cout << "++answer = " << answer << "\n";
+	//subtracting 1 to the variable answer.
+	--answer;
+	//Displaying the formula and answer here.
+	std::cout << "--answer = " << answer << "\n";
+
+	//Adding a and b then assigning the answer to the variable answer.
+	answer = a + b;
+	//Displaying the formula and answer here.
+	std::cout << answer << " = " << a << " + " << b << "\n";
+	//Subtracting a with b then assigning the answer to the variable answer.
+	answer = a - b;
+	//Displaying the formula and answer here.
+	std::cout << answer << " = " << a << " - " << b << "\n";
+	//Multiplying a and b then assigning the answer to the variable answer.
+	answer = a * b;
+	//Displaying the formula and answer here.
+	std::cout << answer << " = " << a << " * " << b << "\n";
+	//Dividing a with b then assigning the answer to the variable answer.
+	answer = a / b;
+	//Displaying the formula and answer here.
+	std::cout << answer << " = " << a << " / " << b << "\n";
+	//Performing the modulo function a with b then assigning the answer to the variable answer.
+	answer = a % b;
+	//Displaying the formula and answer here.
+	std::cout << answer << " = " << a << " % " << b << "\n";
+
+	//Changing the variable answer to 24.
+	answer = 24;
+	//Assigning b as the answer.
+	b = answer;
+	//Adding a to answer.
+	answer += a;
+	//Displaying the formula and answer here.
+	std::cout << b << " += " << a << " = " << answer << "\n";
+	//Assigning b as the answer.
+	b = answer;
+	//Subtracting a from answer.
+	answer -= a;
+	//Displaying the formula and answer here.
+	std::cout << b << " -= " << a << " = " << answer << "\n";
+	//Assigning b as the answer.
+	b = answer;
+	//Multpilying answer by a.
+	answer *= a;
+	//Displaying the formula and answer here.
+	std::cout << b << " *= " << a << " = " << answer << "\n";
+	//Assigning b as the answer.
+	b = answer;
+	//Dividing answer by a.
+	answer /= a;
+	//Displaying the formula and answer here.
+	std::cout << b << " /= " << a << " = " << answer << "\n";
+	//Assigning b as the answer.
+	b = answer;
+	//Performing modulo function on answer with a.
+	answer %= a;
+	//Displaying the formula and answer here.
+	std::cout << b << " %= " << a << " = " << answer << "\n";
+
+	return 0;
+}
