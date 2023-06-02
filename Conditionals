@@ -1,0 +1,124 @@
+#include <iostream>
+
+int main() {
+
+	//Generating and setting a and b variables as zero.
+	int a = 0;
+	int b = 0;
+
+	//Checking if a is equal to b.
+	if (a == b) {
+
+		//Adding eight to a and displaying the conditional.
+		std::cout << a << " is equal to " << b << std::endl;
+		a += 8;
+	}
+	else {
+
+		//Displaying the alternative to the conditional.
+		std::cout << a << " is not equal to " << b << std::endl;
+	}
+
+	//Checking if a is not equal to b.
+	if (a != b) {
+
+		//Adding eight to b and displaying the conditional.
+		std::cout << a << " is not equal to " << b << std::endl;
+		b += 8;
+	}
+	else {
+
+		//Displaying the alternative to the conditional.
+		std::cout << a << " is equal to " << b << std::endl;
+	}
+
+	//Checking if a is less than or equal to b.
+	if (a <= b) {
+
+		//Adding eight to a and displaying the conditional.
+		std::cout << a << " is less than or equal to " << b << std::endl;
+		a += 8;
+	}
+	else {
+
+		//Displaying the alternative to the conditional.
+		std::cout << a << " is not less than or equal to " << b << std::endl;
+	}
+
+	//Checking if a is greater than or equal to b.
+	if (a >= b) {
+
+		//Adding nine to b and displaying the conditional.
+		std::cout << a << " is greater than or equal to " << b << std::endl;
+		b += 9;
+	}
+	else {
+
+		//Displaying the alternative to the conditional.
+		std::cout << a << " is not greater than or equal to " << b << std::endl;
+	}
+
+	//Checking if a is less than b.
+	if (a < b) {
+
+		//Adding two to a and displaying the conditional.
+		std::cout << a << " is less than " << b << std::endl;
+		a += 2;
+	}
+	else {
+
+		//Displaying the alternative to the conditional.
+		std::cout << a << " is not less than " << b << std::endl;
+	}
+
+	//Checking if a is greater than b.
+	if (a > b) {
+
+		//Adding two to b and displaying the conditional.
+		std::cout << a << " is greater than " << b << std::endl;
+		b += 2;
+	}
+	else {
+
+		//Displaying the alternative to the conditional.
+		std::cout << a << " is not greater than " << b << std::endl << std::endl;
+	}
+
+	//Checking if a is equal to b.
+	if (a == b) {
+
+		//Displaying the conditional.
+		std::cout << a << " is equal to " << b << std::endl;
+	}
+	else if (a > b) {
+
+		//Displaying the conditional.
+		std::cout << a << " is greater than " << b << std::endl;
+	}
+	else {
+
+		//displaying the alternative to the conditional.
+		std::cout << a << " is less than " << b << std::endl;
+	}
+	//Checking if a is greater than b or a is equal to b
+	if (a > b || a == b) {
+
+		std::cout << a << " is greater than or equal to " << b << std::endl;
+	}
+	//Checking if a is greater than or equal to b and b is equal to a.
+	if (a >= b && b == a) {
+
+		std::cout << a << " is greater than or equal to " << b << " and " << b << " is equal to " << a << std::endl << std::endl;
+	}
+
+	//Ternary operator
+	//Here a will equal b - a if b is equal to a, b + a if b is less than a, otherwise it will equal a * b.
+	a = b == a ? b - a : b < a ? b + a : a * b;
+
+	//Displaying a.
+	std::cout << "a: " << a << std::endl;
+	//Displaying b.
+	std::cout << "b: " << b << std::endl;
+
+	return 0;
+}
