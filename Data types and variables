@@ -1,0 +1,54 @@
+#include <iostream>
+#include <iomanip>
+
+int main() {
+
+	//setting number percision to 15 decimal places
+	std::cout << std::setprecision(16);
+
+	//int allows for the storage of intergers and ranges from -2,147483648 to 2,147,483,647 and takes up 4 bytes of memory.
+	int interger = -1234567890;
+	//unsigned int is the same as int but all values are positive and the range is from 0 to 4,294,967,295.
+	unsigned int uInterger = -1234567890;
+	//short is the same as int but takes ranges from -32,768 to 32,767 and takes up 2 bytes of memory.
+	short shortInterger = -12345;
+	//unsigned short is the same as int but takes ranges from 0 to 65,535.
+	unsigned short uShortInterger = -12345;
+	//long long is the same as int but ranges from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 and takes up 8 bytes of memory.
+	long long longLong = 1234567890123456789;
+	//unsigned long long is the same as long long but ranges from 0 to 18,446,744,073,709,551,615.
+	unsigned long long ulongLong = 12345678910111213141;
+
+	//float allows for the storing of decimal values up to 7 decimal places.
+	float floatingPoint = 3.1415927f;
+	//double is the same as float but allows for storing of up to 15 decimal places.
+	double doubleFloatingPoint = 3.141592653589793;
+
+	//char allows for the output of a single character, values range from -128 to 127 and takes up 1 byte of memory.
+	//Add 256 to get the alt code symbol if the value is below 0.
+	char character = -94;
+	//unsigned char is the same as char but the values range from 0 to 255
+	//alt code symbols from their value
+	unsigned char uCharacter = 159;
+
+	//std::string allows for the output of text from a single word to a whole stream of text.
+	std::string text = "The quick brown fox jumped over the lazy dog!";
+
+	//bool allows for boolean logic (True or false, on or off, 1 or 0) and takes up 1 byte of information
+	bool trueFalse = true;
+
+	std::cout << "interger: " << interger << "\n";
+	std::cout << "uInterger: " << uInterger << "\n";
+	std::cout << "short interger: " << shortInterger << "\n";
+	std::cout << "unsigned short interger: " << uShortInterger << "\n";
+	std::cout << "long long: " << longLong << "\n";
+	std::cout << "unsigned long long: " << ulongLong << "\n";
+	std::cout << "floating point: " << floatingPoint << "\n";
+	std::cout << "double floating point: " << doubleFloatingPoint << "\n";
+	std::cout << "character: " << character << "\n";
+	std::cout << "unsigned character: " << uCharacter << "\n";
+	std::cout << "text: " << text << "\n";
+	std::cout << "trueFalse: " << trueFalse << "\n";
+
+	return 0;
+}
