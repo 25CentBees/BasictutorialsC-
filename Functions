@@ -1,0 +1,52 @@
+#include <iostream>
+
+void Function() {
+
+	//Here is a function with no input, this one preforms a task and then continues onto the rest of the script.
+	std::cout << "Performing a function!\n";
+}
+int ReturnFunction(int in, int out) {
+
+	//Adding 49 to the in local variable, which is the input variable in the main script.
+	in += 49;
+	//Adding in to the out local variable, which is the output variable in the main script.
+	out += in;
+
+	//returning the value of the local out variable.
+	return out;
+}
+void ReturnFunctionTwo(int in, int& out) {
+
+	//Having the reference to the out in this function allows for the output variable to automatically change in the main script when changed here.
+
+	//Adding 49 to in.
+	in += 49;
+	//Adding in to out.
+	out += in;
+}
+int main() {
+
+	//Functions
+	//Functions may be called any time and may have an input, but do not require an input.
+
+	//Performing the Function function.
+	Function();
+
+	//Creating input variable and assigning the number 15 to it.
+	int input = 15;
+	//Creating output variable and assigning the number 0 to it.
+	int output = 0;
+
+	//Performing the ReturnFunction function.
+	output = ReturnFunction(input, output);
+
+	//Displaying the output.
+	std::cout << "Output: " << output << "\n";
+
+	//Performing the ReturnFunctionTwo function.
+	ReturnFunctionTwo(input, output);
+	//Displaying the output.
+	std::cout << "Output: " << output << "\n";
+
+	return 0;
+}
