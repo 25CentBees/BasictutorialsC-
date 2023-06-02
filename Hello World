@@ -1,0 +1,11 @@
+#include <iostream>
+
+int main() {
+
+	//std::cout outputs into the console text and variables 
+	//The << must be put in before variables and text.
+	//Variables and text must be separated by <<.
+	std::cout << "Hello, world!";
+
+	return 0;
+}
