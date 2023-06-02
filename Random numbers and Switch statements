@@ -1,0 +1,54 @@
+#include <iostream>
+
+int main() {
+
+	//Generating a random number for a seed based on the current time.
+	//Casting std::time(0) as an unsigned int.
+	std::srand((unsigned int)std::time(0));
+
+	//Choosing a number between 0 and 6;
+	int input = rand() % 7;
+	
+	//A switch statement checks an integer variable and finds the case associated with that number.
+	switch (input) {
+
+		//If input equals 0.
+	case 0:
+		//Displaying which case this is.
+		std::cout << "Case 0";
+		//Breaking out of the switch statement.
+		break;
+		//If input equals 1.
+	case 1:
+		//Displaying which case this is.
+		std::cout << "Case 1";
+		//Breaking out of the switch statement.
+		break;
+		//If input equals 2.
+	case 2:
+		//Displaying which case this is.
+		std::cout << "Case 2";
+		//Breaking out of the switch statement.
+		break;
+		//If input equals 3, 4, or 5.
+	case 3:
+	case 4:
+	case 5:
+		//Displaying which case these are.
+		std::cout << "Case 3 or 4 or 5";
+		//Breaking out of the switch statement.
+		break;
+		//If input equals 6.
+	case 6:
+		//Displaying which case this is.
+		std::cout << "Case 6";
+		//Breaking out of the switch statement.
+		break;
+		//Default is if input does not equal any of the cases.
+	default :
+		//Outputting an error to indicate that input is out of range.
+		std::cerr << "ERROR!!! Out of range!!!\a";
+	}
+
+	return 0;
+}
