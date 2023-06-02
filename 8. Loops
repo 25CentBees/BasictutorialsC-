@@ -73,7 +73,34 @@ int main() {
 			KeepWhileOn = false;
 		}
 	} while (KeepWhileOn);
+	
+	//Skipping a line.
+	std::cout << "\n";
+	//Doing a for loop here where continue is used, continue stops the current loop and goes onto the next loop.
+	for (int i = 0; i <= 12; i++) {
 
+		//Checking if i = 7;
+		if (i == 7) {
+
+			//Continuing on to the next loop.
+			continue;
+		}
+		//Displaying i.
+		std::cout << i << "\n";
+	}
+	std::cout << "\n";
+	//Doing a for loop here where break is used, continue stops the loop and goes onto the rest of the script.
+	for (int i = 0; i <= 12; i++) {
+
+		//Checking if i = 7;
+		if (i == 7) {
+
+			//Breaking the loop.
+			break;
+		}
+		//Displaying i.
+		std::cout << i << "\n";
+	}
 	
 	return 0;
 }
