@@ -6,6 +6,7 @@ int main() {
 	//setting number percision to 15 decimal places
 	std::cout << std::setprecision(16);
 
+	//Data types with variables, variables may be changed on the fly.
 	//int allows for the storage of intergers and ranges from -2,147483648 to 2,147,483,647 and takes up 4 bytes of memory.
 	int interger = -1234567890;
 	//unsigned int is the same as int but all values are positive and the range is from 0 to 4,294,967,295.
