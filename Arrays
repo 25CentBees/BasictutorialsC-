@@ -1,0 +1,44 @@
+#include <iostream>
+
+int main() {
+
+	//Arrays
+	//Arrays may be any data type and act as a set of those as variables.
+
+	//Generating array named aArray with the first 8 prime numbers.
+	//The number 8 here tells how many elements are in the array and may be a variable.
+	int aArray[8] = { 2,3,5,7,11,13,17,19 };
+	//Generating array named bArray with the first 8 fibonacci numbers.
+	//There is no need to declare how many elements are in a non-multidimensional array.
+	int bArray[] = { 1,1,2,3,5,8,13,21,34 };
+	//Generating a multidimensional array named cArray with the numbers 1-10.
+	//The second number of elements must be a constant number, but the first number may be a variable.
+	int cAraay[3][4] = { {1,4,7,10},{2,5,8,11},{3,6,9,12} };
+
+	//Looping through aArray.
+	for (int i = 0; i < std::size(aArray); i++) {
+
+		//Displaying current element of aArray.
+		std::cout << aArray[i] << "\n";
+	}
+	//Skipping a line.
+	std::cout << "\n";
+	//Looping through bArray.
+	for (int i = 0; i < std::size(bArray); i++) {
+
+		//Displaying current element of bArray.
+		std::cout << bArray[i] << "\n";
+	}
+	//Skipping a line.
+	std::cout << "\n";
+	//Looping through cArray.
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 3; j++) {
+
+			//Displaying current element of cArray.
+			std::cout << cAraay[j][i] << "\n";
+		}
+	}
+
+	return 0;
+}
