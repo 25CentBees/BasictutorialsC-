@@ -43,6 +43,26 @@ int Factorial(int n) {
 		return n * Factorial(n - 1);
 	}
 }
+int Overload(int a, int b) {
+
+	//Returning a added to b.
+	return a + b;
+}
+float Overload(float a, float b) {
+
+	//Returning a multiplied by b.
+	return a * b;
+}
+int Template(int a, int b) {
+
+	//Returning a added to b.
+	return a + b;
+}
+float Template(float a, float b) {
+
+	//Returning a multiplied by b.
+	return a + b;
+}
 int main() {
 
 	//Functions
@@ -80,6 +100,29 @@ int main() {
 	input = Factorial(input);
 	//Displaying the answer.
 	std::cout << "12! = " << input << "\n";
+	
+	//Setting input as 7.
+	input = 7;
+	//Generating int variable foutput and setting it as 0.
+	float foutput = 0;
+	//Generating int variable input2 and setting it as 13.
+	int input2 = 13;
+	//Generating float variable input3 and setting it as 1.618.
+	float input3 = 1.618f;
+	//Generating float variable input4 and setting it as 2.414.
+	float input4 = 2.414f;
+
+	//Overload functions will change the function depending on what data type of variable is input but still have the same name.
+	output = Overload(input, input2);
+	std::cout << output << "\n";
+	foutput = Overload(input3, input4);
+	std::cout << foutput << "\n";
+
+	//Template functions will perform the same function but will have different data types that are usable for the function.
+	output = Template(input, input2);
+	std::cout << output << "\n";
+	foutput = Template(input3, input4);
+	std::cout << foutput << "\n";
 
 	return 0;
 }
