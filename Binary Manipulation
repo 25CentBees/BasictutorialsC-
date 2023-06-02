@@ -1,0 +1,141 @@
+#include <iostream>
+#include <bitset>
+
+//0bxxxx... = Binary
+
+// Bitwise OR |
+// Bitwise AND &
+// Bitwise XOR ^
+
+int AND(int a, int b) {
+
+	return a & b;
+}
+int OR(int a, int b) {
+
+	return a | b;
+}
+int XOR(int a, int b) {
+
+	return a ^ b;
+}
+int NOT(int a) {
+
+	unsigned int bit = 0;
+	unsigned int tmp = a;
+	while (tmp) {
+
+		tmp >>= 1;
+		bit++;
+	}
+	unsigned int mask = (1U << bit) - 1;
+	return XOR(a, mask);
+}
+int NAND(int a, int b) {
+
+	return NOT(AND(a, b));
+}
+int NOR(int a, int b) {
+
+	return NOT(OR(a, b));
+}
+int XNOR(int a, int b) {
+
+	return NOT(XOR(a, b));
+}
+int IMPLY(int a, int b) {
+
+	return OR(NOT(a), b);
+}
+int NIMPLY(int a, int b) {
+
+	return AND(a, NOT(b));
+}
+int main() {
+
+	//Setting the visible bitsize to 8.
+	const int bitsize = 8;
+	//a = 0b101 = 5
+	int a = 0b101;
+	//b = 0b010 = 2
+	int b = 0b010; // b != ZERO
+	int answer;
+
+	//Displaying the binary of a and b and displaying what they equal in base 10.
+	std::cout << std::bitset<bitsize>(a) << " = " << a << "\n";
+	std::cout << std::bitset<bitsize>(b) << " = " << b << "\n";
+	//ORing a with b and displaying them as binary and what they equal in base 10.
+	answer = OR(a, b);
+	std::cout << a << " | " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//ANDing a with b and displaying them as binary and what they equal in base 10.
+	answer = AND(a, b);
+	std::cout << a << " & " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//exclusive ORing a with b and displaying them as binary and what they equal in base 10.
+	answer = XOR(a, b);
+	std::cout << a << " ^ " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//preforming NOT on a and displaying it as binary and what they equal in base 10.
+	answer = NOT(a);
+	std::cout << "~" << a << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//preforming NOT on b and displaying it as binary and what they equal in base 10.
+	answer = NOT(b);
+	std::cout << "~" << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//preforming C++ NOT on a and displaying it as binary and what they equal in base 10.
+	answer = ~a;
+	std::cout << "C++ ~" << a << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//preforming C++ NOT on b and displaying it as binary and what they equal in base 10.
+	answer = ~b;
+	std::cout << "C++ ~" << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//NOT ANDing a with b and displaying them as binary and what they equal in base 10.
+	answer = NAND(a, b);
+	std::cout << a << " NAND " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//NORing (NOT OR) a with b and displaying them as binary and what they equal in base 10.
+	answer = NOR(a, b);
+	std::cout << a << " NOR " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//Exclusive NORing a with b and displaying them as binary and what they equal in base 10.
+	answer = XNOR(a, b);
+	std::cout << a << " XNOR " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//IMPLYing a with b and displaying them as binary and what they equal in base 10.
+	answer = IMPLY(a, b);
+	std::cout << a << " IMPLY " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//NIMPLYing a with b and displaying them as binary and what they equal in base 10.
+	answer = NIMPLY(a, b);
+	std::cout << a << " NIMPLY " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//Bit shifting a, b amount of places left and displaying them as binary and what they equal in base 10.
+	answer = a << b;
+	std::cout << a << " << " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+	//Bit shifting a, b amount of places right and displaying them as binary and what they equal in base 10.
+	answer = a >> b;
+	std::cout << a << " >> " << b << " = " << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+
+	//0000 0000 = 0
+	//0000 0001 = 1
+	//0000 0010 = 2
+	//0000 0100 = 4
+	//0000 1000 = 8
+	//0001 0000 = 16
+	//0010 0000 = 32
+	//0100 0000 = 64
+	//1000 0000 = 128
+
+	//How to set a specific bit:
+	//answer here becomes a XOR 0000 0010 making it 7 as 5 ^ 2 = 7.
+	answer = XOR(a, 0b00000010);
+	//Displaying the answer in binary and base 10.
+	std::cout << "\n" << std::bitset<bitsize>(answer) << " = " << answer << "\n";
+
+	//How to check if a specific bit is on or off.
+	//Making variable choose selected bit.
+	int bitPlaceToCheck = 3;
+	//Checking if the bitPlaceToCheck - 1 is on: shifting over the amount (bitPlaceToCheck) and then ANDing that, here leaving 4.
+	//If the bit is set True will be returned, otherwise False will be returned.
+	if (answer & 1 << (bitPlaceToCheck - 1)) {
+
+		std::cout << "Bit is on!\n";
+	}
+	else {
+
+		std::cout << "Bit is off!\n";
+	}
+
+	return 0;
+}
