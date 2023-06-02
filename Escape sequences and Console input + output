@@ -1,0 +1,90 @@
+#include <iostream>
+#include <cstdlib>
+
+int main() {
+
+	//Escape Sequences
+	// \n will go to the next line in the command prompt.
+	std::cout << "Hello," << "\n" << " world" << "\n";
+	// \' will outupt the ' symbol.
+	std::cout << "Hello," << "\'" << " world" << "\n";
+	// \" will outupt the " symbol.
+	std::cout << "Hello," << "\"" << " world" << "\n";
+	// \? will outupt the ? symbol.
+	std::cout << "Hello," << "\?" << " world" << "\n";
+	// \\ will outupt the \ symbol.
+	std::cout << "Hello," << "\\" << " world" << "\n";
+	// \a will make an alarm sound.
+	std::cout << "Hello," << "\a" << " world" << "\n";
+	// \b will delete the previous character.
+	std::cout << "Hello," << "\b" << " world" << "\n";
+	// \r will delete the previous word on the current line.
+	std::cout << "Hello," << "\r" << " world" << "\n";
+	// \t will preform a tab function on the line.
+	std::cout << "Hello," << "\t" << " world" << "\n";
+
+	//Console input / output.
+	//Declaring 3 variables, two for inputs and one for the output.
+	float input1;
+	float input2;
+	float output;
+
+	//Starting a new line and outputting into the console, prompting the user to input the first input.
+	std::cout << "\n" << "Input first number: ";
+	//std::cin is used for inputs from the user, input for the first variable is being input here.
+	std::cin >> input1;
+	//Prompting the user to input second number.
+	std::cout << "Input second number: ";
+	//Input for the second variable is being input here.
+	std::cin >> input2;
+	//Adding the inputs and assigning their value to the output variable.
+	output = input1 + input2;
+	//Displaying the addition portion.
+	std::cout << "Addition: \n" << input1 << " + " << input2 << " = " << output << "\n";
+	//Subtracting the inputs and assigning their value to the output variable.
+	output = input1 - input2;
+	//Displaying the subtraction portion.
+	std::cout << "Subtraction: \n" << input1 << " - " << input2 << " = " << output << "\n";
+	//Multiplying the inputs and assigning their value to the output variable.
+	output = input1 * input2;
+	//Displaying the multiplication portion.
+	std::cout << "Multiplication: \n" << input1 << " * " << input2 << " = " << output << "\n";
+
+	//Checking if input 2 is zero to make sure an error does not occur.
+	if (input2 != 0) {
+
+		//Dividing the inputs and assigning their value to the output variable.
+		output = input1 / input2;
+		//Displaying the division portion.
+		std::cout << "Division: \n" << input1 << " / " << input2 << " = " << output << "\n";
+
+		//casting the inputs as intergers, performing a modulo function and assigning their value to the output variable.
+		//Modulo returns a remainder.
+		output = (float)((int)input1 % (int)input2);
+		//Displaying the modulo portion.
+		std::cout << "Modulo: \n" << input1 << " % " << input2 << " = " << output << "\n";
+	}
+	else {
+
+		//std::cerr is the same as std::cout except it shows that this line is an error console message.
+		std::cerr << "ERROR!!!: Can not divide by zero \a\n";
+		//std::clog is the same as std::cerr except it uses buffered memory.
+		std::clog << "ERROR Log!!!\n";
+	}
+
+	//Clearing the console.
+	//Displaying and asking whether the user wants to delete all lines.
+	std::cout << "Delete all lines? y/n: ";
+	//Generating variable charInput.
+	char charInput;
+	//Prompting user to input char.
+	std::cin >> charInput;
+	//Checking if charInput is y or Y.
+	if (charInput == 'y' || charInput == 'Y') {
+
+		//Clearing console.
+		std::system("cls");
+	}
+
+	return 0;
+}
