@@ -5,6 +5,20 @@ int main() {
 
 	//setting number percision to 15 decimal places
 	std::cout << std::setprecision(16);
+	
+	//Different ways of generating variables.
+	//C-Like initialization.
+	int a = 1;
+	//Constructor initialization.
+	int b(2);
+	//Uniform initializaiton.
+	int c{ 3 };
+	//Declaring multiple variables at once.
+	int d = 4, f = 5, g = 6;
+	//Declaring an initially undetermined variable.
+	int h;
+	//Setting the h variable to 1.
+	h = 1;
 
 	//Data types with variables, variables may be changed on the fly.
 	//int allows for the storage of intergers and ranges from -2,147483648 to 2,147,483,647 and takes up 4 bytes of memory.
