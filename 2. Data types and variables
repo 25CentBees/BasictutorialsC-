@@ -30,7 +30,7 @@ int main() {
 	//unsigned short is the same as int but takes ranges from 0 to 65,535.
 	unsigned short uShortInterger = -12345;
 	//long long is the same as int but ranges from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 and takes up 8 bytes of memory.
-	long long longLong = 1234567890123456789;
+	long long longLong = 1234567890123456789ll;
 	//unsigned long long is the same as long long but ranges from 0 to 18,446,744,073,709,551,615.
 	unsigned long long ulongLong = 12345678910111213141;
 
