@@ -38,18 +38,19 @@ int main() {
 	//bool allows for boolean logic (True or false, on or off, 1 or 0) and takes up 1 byte of information
 	bool trueFalse = true;
 
-	std::cout << "interger: " << interger << "\n";
-	std::cout << "uInterger: " << uInterger << "\n";
-	std::cout << "short interger: " << shortInterger << "\n";
-	std::cout << "unsigned short interger: " << uShortInterger << "\n";
-	std::cout << "long long: " << longLong << "\n";
-	std::cout << "unsigned long long: " << ulongLong << "\n";
-	std::cout << "floating point: " << floatingPoint << "\n";
-	std::cout << "double floating point: " << doubleFloatingPoint << "\n";
-	std::cout << "character: " << character << "\n";
-	std::cout << "unsigned character: " << uCharacter << "\n";
-	std::cout << "text: " << text << "\n";
-	std::cout << "trueFalse: " << trueFalse << "\n";
+	//std::endl ends a line.
+	std::cout << "interger: " << interger << std::endl;
+	std::cout << "uInterger: " << uInterger << std::endl;
+	std::cout << "short interger: " << shortInterger << std::endl;
+	std::cout << "unsigned short interger: " << uShortInterger << std::endl;
+	std::cout << "long long: " << longLong << std::endl;
+	std::cout << "unsigned long long: " << ulongLong << std::endl;
+	std::cout << "floating point: " << floatingPoint << std::endl;
+	std::cout << "double floating point: " << doubleFloatingPoint << std::endl;
+	std::cout << "character: " << character << std::endl;
+	std::cout << "unsigned character: " << uCharacter << std::endl;
+	std::cout << "text: " << text << std::endl;
+	std::cout << "trueFalse: " << trueFalse << std::endl;
 
 	return 0;
 }
