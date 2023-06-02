@@ -38,6 +38,8 @@ int main() {
 	float floatingPoint = 3.1415927f;
 	//double is the same as float but allows for storing of up to 15 decimal places.
 	double doubleFloatingPoint = 3.141592653589793;
+	//How to use scientific notation, lowercase e may also be used.
+	double scientificNotation = 6.02214676E23f;
 
 	//char allows for the output of a single character, values range from -128 to 127 and takes up 1 byte of memory.
 	//Add 256 to get the alt code symbol if the value is below 0.
@@ -61,6 +63,7 @@ int main() {
 	std::cout << "unsigned long long: " << ulongLong << std::endl;
 	std::cout << "floating point: " << floatingPoint << std::endl;
 	std::cout << "double floating point: " << doubleFloatingPoint << std::endl;
+	std::cout << "scientific notation: " << scientificNotation << std::endl;
 	std::cout << "character: " << character << std::endl;
 	std::cout << "unsigned character: " << uCharacter << std::endl;
 	std::cout << "text: " << text << std::endl;
