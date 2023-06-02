@@ -1,0 +1,79 @@
+#include <iostream>
+
+int main() {
+
+	//Loops
+
+	//Generating integer variable a.
+	int a = 0;
+
+	//In for loops a integer of some type may be generated.
+	//That integer variable is checked if it is below (or above) a specific number.
+	//If that variable is below (or above) a specific number the for loop will count down (or up).
+	//Here the for loop is counting until i (which will automatically increase (or decrease in each for loop) until i is not less than or equal to 12.
+	//When this happens the for loop will not go onto the next loop and will continue onto the script.
+	//If one knows calculus, think about this as if it were a sigma notation (summation) or pi notation (product), except here any function may work, not just addition and multiplication.
+	for (int i = 0; i <= 12; i++) {
+
+		//Looping through the triangular numbers.
+		a += i;
+		//Displaying said numbers.
+		std::cout << a << "\n";
+	}
+
+	//Skipping line.
+	std::cout << std::endl;
+	//Setting a equal to 1.
+	a = 1;
+	//Displaying the first number in the square numbers.
+	std::cout << a << "\n";
+	//Generating boolean variable and setting it to true.
+	bool KeepWhileOn = true;
+
+	//the while loops check a true / false condition loop as long as it is true.
+	while(KeepWhileOn) {
+
+		//Multiplying a by 2
+		//Generating the square numbers.
+		a += a;
+		//Displaying said numbers.
+		std::cout << a << "\n";
+
+		//Checking if a is greater than or equal to 12.
+		if (a >= 256) {
+
+			//If true; setting keepWhileOn to false.
+			KeepWhileOn = false;
+		}
+	}
+
+	//Skipping line.
+	std::cout << std::endl;
+
+	//Setting a to 1.
+	a = 1;
+	int i = 1;
+	//Setting keepWhileOn to true.
+	KeepWhileOn = true;
+
+	//The do while loops do the same thing as while loops except they check whether the condition is true after the loop instead of at the start.
+	do {
+
+		//Generating the pentagonal numbers.
+		a = (3 * i * i - i) / 2;
+		//Adding 1 to i.
+		i += 1;
+		//Displaying the value of the variable a.
+		std::cout << a << "\n";
+
+		//Checking if a is greater than or equal to 117.
+		if (a >= 117) {
+
+			//If true; setting keepWhileOn to false.
+			KeepWhileOn = false;
+		}
+	} while (KeepWhileOn);
+
+	
+	return 0;
+}
