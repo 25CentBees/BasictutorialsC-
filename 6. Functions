@@ -24,6 +24,25 @@ void ReturnFunctionTwo(int in, int& out) {
 	//Adding in to out.
 	out += in;
 }
+void DefaultingFunction(int& out, int defaultValue = 5) {
+
+	//setting out as the defaultValue, which may be 5 or an input if desired.
+	out = defaultValue;
+}
+int Factorial(int n) {
+
+	//Checking if n equals 1.
+	if (n == 1) {
+
+		//Returning 1.
+		return 1;
+	}
+	else {
+
+		//Returning a recursive function of n multiplied by all Factorials before this number.
+		return n * Factorial(n - 1);
+	}
+}
 int main() {
 
 	//Functions
@@ -47,6 +66,20 @@ int main() {
 	ReturnFunctionTwo(input, output);
 	//Displaying the output.
 	std::cout << "Output: " << output << "\n";
+	
+	//Performing the DefaultingFunction.
+	DefaultingFunction(output);
+	std::cout << output << "\n";
+	//Performing the DefaultingFunction with a second input.
+	DefaultingFunction(output, input);
+	std::cout << output << "\n";
+
+	//setting input to 12.
+	input = 12;
+	//Performing a factorial on the input variable.
+	input = Factorial(input);
+	//Displaying the answer.
+	std::cout << "12! = " << input << "\n";
 
 	return 0;
 }
