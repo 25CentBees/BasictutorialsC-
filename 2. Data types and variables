@@ -53,6 +53,10 @@ int main() {
 
 	//bool allows for boolean logic (True or false, on or off, 1 or 0) and takes up 1 byte of information
 	bool trueFalse = true;
+	
+	//Generating a const int variable named constant and setting it equal to 2.
+	//Constants can not be changed after being set and must be set.
+	const int constant = 2;
 
 	//std::endl ends a line.
 	std::cout << "interger: " << interger << std::endl;
@@ -68,6 +72,7 @@ int main() {
 	std::cout << "unsigned character: " << uCharacter << std::endl;
 	std::cout << "text: " << text << std::endl;
 	std::cout << "trueFalse: " << trueFalse << std::endl;
+	std::cout << "constant: " << constant << std::endl;
 
 	return 0;
 }
