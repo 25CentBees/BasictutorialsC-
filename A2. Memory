@@ -1,0 +1,110 @@
+#include <iostream>
+
+int Addition(int a, int b) {
+
+	//Returning a added to b.
+	return a + b;
+}
+int Function(int a, int b, int (*calledfunction)(int, int)) {
+
+	//Returning the called function.
+	return calledfunction(a, b);
+}
+int main() {
+
+	//Generating variable a and setting it to the number 5.
+	int a = 5;
+
+	//Generating pointer variable.
+	//The * symbol here tells the variable that it is a pointer.
+	int* pointer;
+
+	//Setting pointer to the address of a.
+	//The & symbol here references the address of a.
+	pointer = &a;
+
+	//Displaying the variable a value.
+	std::cout << "a = " << a << "\n";
+	//Displaying the variable pointer address.
+	std::cout << "pointer address: " << pointer << "\n";
+	//Displaying the variable a address, here & gives the memory location.
+	std::cout << "a address: " << &a << "\n";
+	//Displaying the variable pointer value, here the * symbol dereferences the pointer variable giving the value instead of the memory location.
+	std::cout << "pointer = " << *pointer << "\n";
+
+	//Skipping a line.
+	std::cout << "\n";
+
+	//Changing a to 12 to show that changing this variable will change what the pointer variable is equal to.
+	a = 12;
+
+	//Displaying the a variable.
+	std::cout << "a = " << a << "\n";
+	//Displaying the pointer variable.
+	std::cout << "pointer = " << *pointer << "\n";
+
+	//Skipping a line.
+	std::cout << "\n";
+
+	//Changing pointer to 8 to show that changing this variable will change what the a variable is equal to.
+	*pointer = 8;
+
+	//Displaying the a variable value.
+	std::cout << "a = " << a << "\n";
+	//Displaying the pointer variable value.
+	std::cout << "pointer = " << *pointer << "\n";
+
+	//Skipping a line.
+	std::cout << "\n";
+
+	//Pointers to pointers are also possible.
+	int** pointerPointer = &pointer;
+	//Displaying the pointerPointer variable value.
+	std::cout << "pointerPointer = " << **pointerPointer << "\n";
+
+	//Skipping a line.
+	std::cout << "\n";
+
+	//The const pointers may be accessed but they can not be modified directly.
+	const int* constint = &a;
+	//Setting a equal to constint.
+	a = *constint;
+	//Displaying the value of a.
+	std::cout << "a = " << a << "\n";
+	//Displaying the address of constint.
+	std::cout << "constint address: " << constint << "\n";
+	//Displaying the value of constint.
+	std::cout << "constint = " << *constint << "\n";
+
+	//Skipping a line.
+	std::cout << "\n";
+
+	//Setting a equal to 5.
+	a = 5;
+	//Displaying the value of a.
+	std::cout << "a = " << a << "\n";
+	//Displaying the address of constint.
+	std::cout << "constint address: " << constint << "\n";
+	//Displaying the value of constint.
+	std::cout << "constint = " << *constint << "\n";
+
+	//Skipping a line.
+	std::cout << "\n";
+
+	//Functions passed to other functions.
+	//Generating integer b and assigning it the value 7.
+	int b = 7;
+	//Performing the funciton Function and giving the outputted value to a.
+	a = Function(a, b, Addition);
+	//Displaying the value of a.
+	std::cout << "a = " << a << "\n";
+
+	//The new operator is used to allocate dynamic memory and generates an object or array of objects..
+	int* newPointer = new int;
+
+	//Deleting newPointer to free up memory.
+	delete newPointer;
+	//For pointers to arrays use delete[] pointerVariable.
+
+	return 0;
+}
