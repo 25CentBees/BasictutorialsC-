@@ -55,7 +55,7 @@ int main() {
 	bool trueFalse = true;
 	
 	//Generating a const int variable named constant and setting it equal to 2.
-	//Constants can not be changed after being set and must be set.
+	//Constants can not be changed after being set and must be set initially.
 	const int constant = 2;
 
 	//std::endl ends a line.
