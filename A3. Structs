@@ -1,0 +1,114 @@
+#include <iostream>
+
+struct otherstruct {
+
+	int amount;
+};
+//A struct is a group of elements that may be generated and be any data type and are called members, it may be named like any variable.
+//After the curly brackets objects may be generated, they each contain all of the members of the struct which are unique to each object.
+struct metals {
+
+	//Members of the struct are being called here.
+	float mass;
+	float cost;
+	float costForMass;
+	//nesting other structures is also possible.
+	otherstruct otherStructure;
+
+} copper, silver, gold; //Objects.
+int main() {
+
+	//Creating a variable to store the multiplier to get pounds.
+	float pound = 453.59237f;
+	//Creating a variable to store the multiplier to get ounces.
+	float ounce = 28.349523125f;
+
+	//Setting coppers mass member to 63.546.
+	copper.mass = 63.546f;
+	//Setting coppers cost member to 0.008.
+	copper.cost = 0.008f;
+	//Setting coppers costForMass to copper.mass * copper.cost.
+	copper.costForMass = copper.mass * copper.cost;
+
+	//Displaying coppers mass and how much copper costs.
+	std::cout << "Copper mass = " << copper.mass << " g/mol" << "\n";
+	std::cout << "Copper cost per gram = " << copper.cost << " $/g" << "\n";
+	std::cout << "Copper cost per mol = " << copper.costForMass << " $/mol" << "\n";
+	std::cout << "Copper cost per lb = " << copper.cost * pound << " $/lb" << "\n";
+	std::cout << "Copper cost per oz = " << copper.cost * ounce << " $/oz" << "\n";
+
+	//Skipping line.
+	std::cout << "\n";
+	
+	//Setting silvers mass member to 107.87.
+	silver.mass = 107.87f;
+	//Setting silvers cost member to 0.76.
+	silver.cost = 0.76f;
+	//Setting silvers costForMass to silver.mass * silver.cost.
+	silver.costForMass = silver.mass * silver.cost;
+
+	//Displaying silver mass and how much silver costs.
+	std::cout << "Silver mass = " << silver.mass << " g/mol" << "\n";
+	std::cout << "Silver cost = " << silver.cost << " $/g" << "\n";
+	std::cout << "Silver cost per mol = " << silver.costForMass << " $/mol" << "\n";
+	std::cout << "Silver cost per lb = " << silver.cost * pound << " $/lb" << "\n";
+	std::cout << "Silver cost per oz = " << silver.cost * ounce << " $/oz" << "\n";
+
+	//Skipping line.
+	std::cout << "\n";
+	
+	//Setting golds mass member to 196.97.
+	gold.mass = 196.97f;
+	//Setting golds cost member to 63.75.
+	gold.cost = 63.75f;
+	//Setting golds costForMass to gold.mass * gold.cost.
+	gold.costForMass = gold.mass * gold.cost;
+
+	//Displaying gold mass and how much gold costs.
+	std::cout << "Gold mass = " << gold.mass << " g/mol" << "\n";
+	std::cout << "Gold cost = " << gold.cost << " $/g" << "\n";
+	std::cout << "Gold cost per mol = " << gold.costForMass << " $/mol" << "\n";
+	std::cout << "Gold cost per lb = " << gold.cost * pound << " $/lb" << "\n";
+	std::cout << "Gold cost per oz = " << gold.cost * ounce << " $/oz" << "\n";
+
+	//Skipping line.
+	std::cout << "\n";
+
+	//Objects for structs may be generated via script as well.
+	metals platinum;
+
+	//Setting platinums mass member to 195.08.
+	platinum.mass = 195.08f;
+	//Setting platinums cost member to 32.54.
+	platinum.cost = 32.54f;
+	//Setting platinums costForMass to platinum.mass * platinum.cost.
+	platinum.costForMass = platinum.mass * platinum.cost;
+
+	//Displaying platinum mass and how much platinum costs.
+	std::cout << "Platinum mass = " << platinum.mass << " g/mol" << "\n";
+	std::cout << "Platinum cost = " << platinum.cost << " $/g" << "\n";
+	std::cout << "Platinum cost per mol = " << platinum.costForMass << " $/mol" << "\n";
+	std::cout << "Platinum cost per lb = " << platinum.cost * pound << " $/lb" << "\n";
+	std::cout << "Platinum cost per oz = " << platinum.cost * ounce << " $/oz" << "\n";
+
+	//Skipping line.
+	std::cout << "\n";
+
+	//Generating a pointer to an object for metals.
+	metals* pointerToMetals;
+	//Using silver as a reference.
+	pointerToMetals = &silver;
+
+	//Displaying how much the pointer costs.
+	std::cout << "Metals pointer cost : " << pointerToMetals->cost << " $/g " << "\n\n";
+
+	//An example of using a nesting struct, here the nested structure contains the element amount which is set to 15 for the silver object.
+	silver.otherStructure.amount = 15;
+
+	//Displaying how much silver there is (in oz) and how much 15 g of silver costs.
+	std::cout << "New silver amount of oz = " << silver.otherStructure.amount << " oz" << "\n";
+	std::cout << "Silver cost for " << silver.otherStructure.amount << " oz: ";
+	std::cout << silver.otherStructure.amount * silver.cost * ounce << " $/" << silver.otherStructure.amount << " oz" << "\n";
+
+	return 0;
+}
