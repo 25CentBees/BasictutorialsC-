@@ -1,0 +1,73 @@
+#include <iostream>
+
+//union is akin to struct except if a variables value is changed for a object, all other values will be changed for that object.
+//structs may be put in unions and unions in structs.
+//All members share the same memory location.
+union unions{
+
+	int interger;
+	float floatingPoint;
+	double doubleFloatingPoint;
+
+} object1, object2;
+int main() {
+
+	//union
+
+	//Calling objects from the union unions and assigning their data types values.
+	object1.interger = 50;
+	object2.interger = 5;
+	object1.floatingPoint = 1.6180340f;
+	object2.floatingPoint = 1.2345678f;
+	object1.doubleFloatingPoint = 3.302775637731995;
+	object2.doubleFloatingPoint = 9.876543212345678;
+
+	//Displaying the unions elements values.
+	//Seeing the displayed vales one can see the values before the doubles variable are not what was entered.
+	std::cout << object1.interger << std::endl;
+	std::cout << object2.interger << std::endl;
+	std::cout << object1.floatingPoint << std::endl;
+	std::cout << object2.floatingPoint << std::endl;
+	std::cout << object1.doubleFloatingPoint << std::endl;
+	std::cout << object2.doubleFloatingPoint << std::endl;
+
+	//Skipping line.
+	std::cout << std::endl;
+
+	//using
+	//using is used as an alias for dataTypes.
+
+	//Here d is being used as double, f as float, and i as int.
+	using d = double;
+	using f = float;
+	using i = int;
+
+	//Generating the variable integer from the alias i and assigning it the value of 12.
+	i integer = 12;
+	//Generating the variable floatingPoint from the alias f and assigning it an approximated value of pi.
+	f floatingPoint = 3.1415927f;
+	//Generating the variable doubleFloatingPoint from the alias d and assigning it an approximated value of sqrt(2).
+	d doubleFloatingPoint = 1.414213562373095f;
+
+	//Displaying the variables values.
+	std::cout << integer << std::endl;
+	std::cout << floatingPoint << std::endl;
+	std::cout << doubleFloatingPoint << std::endl;
+
+	//Skipping line.
+	std::cout << std::endl;
+
+	//typedef
+	//typedef is the same as using but has limitations and is compatable with C.
+
+	//Here c is being used as char.
+	typedef char c;
+
+	//Generating the variable character from the alias c and assigning it the value of 'a';
+	c character = 'a';
+
+	//Displaying the variable 'a' value.
+	std::cout << character << std::endl;
+
+	return 0;
+}
