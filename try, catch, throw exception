@@ -1,0 +1,42 @@
+#include <iostream>
+
+int main() {
+
+	//try, catch, throw exception.
+
+	//Generating seed based on current time for random number generation.
+	std::srand(static_cast<int>(std::time(0)));
+
+	//Generating an integer variable called randomNum and setting it to a random number from 0 to 12.
+	int randomNum = std::rand() % 13;
+
+	//Displaying randomNum.
+	std::cout << randomNum << std::endl;
+
+	//Performing try, catch, throw exception.
+	//Used in finding errors and helps with gathering information about the error.
+	try {
+
+		//Performing the Collatz conjecture.
+		//Checking if randomNum is even.
+		if (randomNum % 2 == 0) {
+
+			//throw throws the answer here to the catch variable.
+			throw float(randomNum) / 2;
+		}
+		else {
+
+			//throw throws the answer here to the catch variable.
+			throw (float(randomNum) * 3) + 1;
+		}
+	}
+	//catch catches the thrown value and generates a variable from a specified data type.
+	catch (float newNum) {
+
+		//Displaying newNum.
+		std::cout << newNum << std::endl;
+	}
+
+
+	return 0;
+}
