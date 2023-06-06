@@ -57,6 +57,22 @@ int main() {
 	//Generating a const int variable named constant and setting it equal to 2.
 	//Constants can not be changed after being set and must be set initially.
 	const int constant = 2;
+	
+	//Auto detects what type the variable should be and stores that type.
+	//This should be used only when necessary as it can run into problems and it is not easy to read.
+	auto automaticType = 5.193;
+
+	int variableToConvertType = 5;
+	float otherVariable = 7.13f;
+
+	//One may convert from one type to another type to ensure data is not lost.
+	//C-style type conversion.
+	otherVariable = (float)variableToConvertType;
+	//Function-style type conversion.
+	otherVariable = float(variableToConvertType);
+	//static_cast can also be used to convert from one type to another, const values to non-const values as well as many other things like pointers to classes and enums.
+	//static_cast is a compile-time caster.
+	otherVariable = static_cast<float>(variableToConvertType);
 
 	//std::endl ends a line.
 	std::cout << "interger: " << interger << std::endl;
@@ -73,6 +89,8 @@ int main() {
 	std::cout << "text: " << text << std::endl;
 	std::cout << "trueFalse: " << trueFalse << std::endl;
 	std::cout << "constant: " << constant << std::endl;
+	std::cout << "automaticType: " << automaticType << std::endl;
+	std::cout << "otherVariable: " << otherVariable << std::endl;
 
 	return 0;
 }
