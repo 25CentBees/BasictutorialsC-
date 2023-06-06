@@ -1,0 +1,74 @@
+#include <iostream>
+
+//enum and enum class.
+
+//enum allows the storage of a range of numbers as elements.
+//enum is unscoped and may run into problems as it can interact with other enums and variables which may or may not have the same name as the element.
+enum Directions {
+
+	//Here down = 0, left = 1, up = 2, and right = 3, idle = 4.
+	down, left, up, right, idle
+};
+//enum class is scoped and must be called using the enum class type name with '::' after then the element name.
+enum class Colors {
+
+	//It is possible to start the elements values in both enum and enum class at a higher or lower value than 0.
+	//red = 2, yellow = 3, green = 4, cyan = 5, blue = 6, magenta = 7, black = 8, white = 9.
+	red = 2, yellow, green, cyan, blue, magenta, black, white
+};
+int main() {
+
+	//Setting up seed for random number generator.
+	std::srand(static_cast<int>(std::time(0)));
+
+	//Setting int variable direction to a random number between down (0) and idle (4).
+	int direction = rand() % idle;
+
+	//Selecting case from randomized direction.
+	switch (direction) {
+
+		//If direction is equal to down.
+	case down:
+		//Displaying the value of down.
+		std::cout << "The number for down is: " << down << std::endl;
+		//Breaking out of the switch statement.
+		break;
+		//If direction is equal to left.
+	case left:
+		//Displaying the value of left.
+		std::cout << "The number for left is: " << left << std::endl;
+		//Breaking out of the switch statement.
+		break;
+		//If direction is equal to up.
+	case up:
+		//Displaying the value of up.
+		std::cout << "The number for up is: " << up << std::endl;
+		//Breaking out of the switch statement.
+		break;
+		//If direction is equal to right.
+	case right:
+		//Displaying the value of right.
+		std::cout << "The number for right is: " << right << std::endl;
+		//Breaking out of the switch statement.
+		break;
+	}
+
+	//Skipping a line.
+	std::cout << std::endl;
+
+	//Generating Colors object color and setting its value to the cyan element of Colors.
+	Colors color = Colors::cyan;
+
+	//Checking if the color variable is the same as the cyan element of Colors.
+	if (color == Colors::cyan) {
+
+		//Displaying the value of Colors::cyan.
+		std::cout << "The number for Cyan is: " << static_cast<int>(color) << std::endl;
+	}
+
+	//In conclusion; for enum and enum class both have their positives and negatives.
+	//What one is utilizing enum and enum class for determines which is a better choice.
+	//Even so enum class is preferred as it leads to less overall problems.
+
+	return 0;
+}
