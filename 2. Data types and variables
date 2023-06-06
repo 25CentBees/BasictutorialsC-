@@ -1,9 +1,12 @@
 #include <iostream>
 #include <iomanip>
 
+//Variables may be placed outside of the main script, these are called "Global variables", while others are called "Local variables".
+int var = 12;
+
 int main() {
 
-	//setting number percision to 15 decimal places
+	//setting number percision to 15 decimal places.
 	std::cout << std::setprecision(16);
 	
 	//Different ways of generating variables.
@@ -75,6 +78,7 @@ int main() {
 	otherVariable = static_cast<float>(variableToConvertType);
 
 	//std::endl ends a line.
+	std::cout << "var: " << var << std::endl;
 	std::cout << "interger: " << interger << std::endl;
 	std::cout << "uInterger: " << uInterger << std::endl;
 	std::cout << "short interger: " << shortInterger << std::endl;
