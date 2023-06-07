@@ -1,0 +1,122 @@
+#include <iostream>
+#include <string>
+
+//Defining an approximation of pi.
+#define PI 3.1415926535897932
+
+//Defining the size of an array about to be made.
+#define ARRAY_SIZE 12
+
+//Checking if ARRAY_SIZE is defined.
+#ifdef ARRAY_SIZE
+
+//Generating int array named array.
+int array[ARRAY_SIZE] = { 1,2,3,4,5,6,7,8,9,10,11,12 };
+
+//Ending the ifdef
+#endif
+
+//undef undefines a definition.
+#undef ARRAY_SIZE
+
+//Checking if ARRAY_SIZE is no defined.
+#ifndef ARRAY_SIZE
+
+//
+#line 29
+
+//Generating a string to indicate that ARRAY_SIZE is not defined.
+std::string notDefined = "ERROR!!!: ARRAY_SIZE is not defined!!! REDEFINING";
+#define ARRAY_SIZE 144
+
+//Ending the ifndef.
+#endif
+
+//The preprocessor version of the if conditional.
+//Asking if ARRAY_SIZE is greater than 144.
+#if ARRAY_SIZE > 144
+
+//Undefining ARRAY_SIZE.
+#undef ARRAY_SIZE
+//Setting ARRAY_SIZE to 8.
+#define ARRAY_SIZE 8
+
+//The preprocessor version of the elseif conditional.
+//Asking if ARRAY_SIZE is equal to 144.
+#elif ARRAY_SIZE == 144
+
+//Undefining ARRAY_SIZE.
+#undef ARRAY_SIZE
+//Setting ARRAY_SIZE to 12 (What it used to be).
+#define ARRAY_SIZE 12
+
+//The preprocessor version of the else conditional.
+#else
+
+//Undefining ARRAY_SIZE.
+#undef ARRAY_SIZE
+//Setting ARRAY_SIZE to 144 (What it was before being undefined here).
+#define ARRAY_SIZE 144
+
+#endif
+
+int main(){
+
+	//Preprocessor directives.
+	//Preprocessor directives process the source code before compiling the code.
+
+	//Displaying error message and the value of ARRAY_SIZE.
+	std::cout << notDefined << ": ARRAY_SIZE value is now: " << ARRAY_SIZE << std::endl << std::endl;
+
+	//Using a for loop to count 1 through 12.
+	for (int i = 0; i < 12; i++) {
+
+		//Displaying array element.
+		std::cout << array[i] << std::endl;
+	}
+
+	//Skipping line.
+	std::cout << std::endl;
+
+	//Generating double variable named radius.
+	double radius;
+
+	//Prompting the user to enter a radius of a circle.
+	std::cout << "Enter radius of a circle: ";
+	std::cin >> radius;
+	std::cout << std::endl;
+
+	//Generating the variables for diameter, radius, and circumference and inputting their equations.
+	double diameter = 2 * radius;
+	double radiusSquared = radius * radius;
+	double area = radiusSquared * PI;
+	double circumference = diameter * PI;
+	double surfaceArea = 4 * PI * radiusSquared;
+	double volume = (4.0 / 3.0) * PI * radius * radius * radius;
+
+	//Displaying the output for the equations in the previous group to the console.
+	std::cout << "Diameter = " << diameter << std::endl;
+	std::cout << "Area of the circle = " << area << std::endl;
+	std::cout << "Circumference of the circle = " << circumference << std::endl;
+	std::cout << "Surface area of the sphere = " << surfaceArea << std::endl;
+	std::cout << "Volume of the sphere = " << volume << std::endl << std::endl;
+
+	//Preprocessor macros.
+
+	//__TIME__ shows the current time (hr:min:sec).
+	std::cout << __TIME__ << std::endl;
+	//__DATE__ shows the current time (mon day yr).
+	std::cout << __DATE__ << std::endl;
+	//__TIMESTAMP__ shows the current time (wk_day mon day hr:min:sec yr).
+	std::cout << __TIMESTAMP__ << std::endl;
+	//__LINE__ shows the current line of code being compiled.
+	std::cout << __LINE__ << std::endl;
+	//__FILE__ shows the location of the file.
+	std::cout << __FILE__ << std::endl;
+	//Changing the location of the line of code and the file name.
+#line 88 "File_Name"
+	//__LINE__ here is changed by #line and the location of the file is also changed.
+	std::cout << __LINE__ << __FILE__ << std::endl;
+
+	return 0;
+}
