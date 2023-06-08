@@ -233,7 +233,7 @@ private:
 };
 int main() {
 	
-	//Classes.
+	//Classes
 	//Classes are akin to structs but differ in a few key details:
 	//Classes may have public or private portions but are default as private while struct are always public.
 	//Classes are able to inherit variables from the public portion of fellow classes.
@@ -269,7 +269,7 @@ int main() {
 	//Skipping a line.
 	std::cout << std::endl;
 
-	//The -> is a structure dereference
+	//The -> is a structure dereference.
 	//This points to the length variable of the cube object.
 	//Setting length in cube to tetrahedron.length.
 	cube->length = tetrahedron.length;
@@ -292,7 +292,7 @@ int main() {
 	cube->SetSurfaceArea();
 	cube->SetVolume();
 
-	//Setting sphere circumference, surfaceArea, and volume
+	//Setting sphere circumference, surfaceArea, and volume.
 	sphere.SetCircumference();
 	sphere.SetSurfaceArea();
 	sphere.SetVolume();
