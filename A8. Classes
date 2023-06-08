@@ -1,0 +1,323 @@
+#include <iostream>
+
+//Definining an approximation of pi for later use.
+#define PI 3.1415926535897932
+
+//Generating Tetrahedron class.
+class Tetrahedron {
+
+//public portion may be accessed by the main script directly.
+public:
+
+	//Generating public variable length.
+	double length;
+
+	//Static variables will be changed by any inherited class or instantiated instance they are associated with.
+	//For example: Here Tetrahedron, Cube, and Sphere can all change the static variable x and x will be equal in all of these scripts.
+	static double x;
+
+	//Constructor
+	//Has the same name as the class.
+	//Called when the class is created and called each time the class is instantiated.
+	//The constructors in this script are initializing variables.
+	//Can carry out arguments.
+	//Multiple Constructors may be in one class.
+	//May be overloaded just like normal functions.
+	Tetrahedron() {
+
+		//Initializing variables.
+		length = 0;
+		edgeLength = 0;
+		surfaceArea = 0;
+		volume = 0;
+		height = 0;
+	}
+	//Destructor
+	//Has the same name as the class with a ~ in front of it.
+	//Called when an already existing instance of a class is deleted.
+	//Can not carry out arguments.
+	//Only one Destructor per class.
+	virtual ~Tetrahedron() {
+
+	}
+	//Function here to set the edgeLength variable of this class, there is an input variable for assigning a number to edgeLength.
+	void SetEdgeLength(double input) {
+
+		//Setting edgeLength to input.
+		edgeLength = input;
+	}
+	//Function here to set the surfaceArea variable of this class.
+	void SetSurfaceArea() {
+
+		//Setting surface area to sqrt(3) * edgeLength squared.
+		surfaceArea = 1.732050807568877 * edgeLength * edgeLength;
+	}
+	//Function here to set the volume variable of this class.
+	void SetVolume() {
+
+		//Setting volume to edgeLength cubed divided by 6 * sqrt(2).
+		volume = (edgeLength * edgeLength * edgeLength) / 8.485281374238570;
+	}
+	//Function here to set the height variable of this class.
+	void SetHeight() {
+
+		//Setting height to sqrt(2 divided by 3) * edgeLength.
+		height = 0.816496580927726 * edgeLength;
+	}
+	//Function to return the private variable surface area.
+	double GiveSurfaceArea() {
+
+		//Returning surfaceArea.
+		return surfaceArea;
+	}
+	//Function to return the private variable volume.
+	double GiveVolume() {
+
+		//Returning volume.
+		return volume;
+	}
+	//Function to return the private variable height.
+	double GiveHeight() {
+
+		//Returning height.
+		return height;
+	}
+
+//private portion may not be access by the main script.
+private:
+
+	//Generating variables for Tetrahedron.
+	double edgeLength;
+	double surfaceArea;
+	double volume;
+	double height;
+
+}tetrahedron;//Objects may be made from the class.
+
+//The static variable must be defined before use.
+// //The static variable must be defined outside of the class.
+//structs may also use static.
+double Tetrahedron::x = 0;
+
+//Generating Cube class and inheriting from Tetrahedron.
+class Cube : public Tetrahedron {
+
+//public portion may be accessed by the main script directly.
+public:
+
+	//Genrating public variable edgeLength.
+	double edgeLength;
+
+	//Genrating function SetSurfaceArea for cube class.
+	void SetSurfaceArea();
+	//Generating Cube constructor.
+	Cube() {
+
+		//Initializing variables.
+		edgeLength = 0;
+		surfaceArea = 0;
+		volume = 0;
+	}
+	//Function here to set the edgeLength variable of this class, there is an input variable for assigning a number to edgeLength.
+	void SetEdgeLength(double input) {
+
+		//Setting edgeLength to input.
+		edgeLength = input;
+	}
+	//Function here to set the volume variable for this class.
+	void SetVolume() {
+
+		//Setting volume to edgeLength cubed.
+		volume = edgeLength * edgeLength * edgeLength;
+	}
+	//Function here returns the private variable surfaceArea.
+	double GiveSurfaceArea() {
+
+		return surfaceArea;
+	}
+	//Function here returns the private variable volume.
+	double GiveVolume() {
+
+		return volume;
+	}
+	//Function here returns the Diagonal length of a cube.
+	double GiveDiagonalLength() {
+
+		//Returns sqrt(3.0 * edgeLength).
+		return sqrt(3.0 * edgeLength);
+	}
+
+//private portion may not be access by the main script.
+private:
+
+	//Generating variables for Cube class.
+	double surfaceArea;
+	double volume;
+
+};
+//Functions may exist outside of the class.
+void Cube::SetSurfaceArea() {
+
+	//Sets 6.0 * edgeLength squared.
+	surfaceArea = 6.0 * edgeLength * edgeLength;
+}
+//Generating class Sphere which inherits from Tetrahedron.
+class Sphere : public Tetrahedron {
+
+//public portion may be accessed by the main script directly.
+public:
+
+	//Genrating public variable radius.
+	double radius;
+
+	//Generating Sphere constructor.
+	Sphere() {
+
+		//Initializing variables.
+		radius = 0;
+		circumference = 0;
+		surfaceArea = 0;
+		volume = 0;
+	}
+	//Function here to set the radius variable of this class, there is an input variable for assigning a number to radius.
+	void SetRadius(double input) {
+
+		//Setting radius to input divided by 2.
+		radius = input / 2.0;
+	}
+	//Function here to Set the circumference variable.
+	void SetCircumference() {
+
+		//Setting circumference to 2 pi r.
+		circumference = 2.0 * PI * radius;
+	}
+	//Function here to Set the surfaceArea variable.
+	void SetSurfaceArea() {
+
+		//Setting surface area to 4 pi * r squared.
+		surfaceArea = 4.0 * PI * radius * radius;
+	}
+	//Function here to Set the volume variable.
+	void SetVolume() {
+
+		//Setting volume to 4 divided by 3 * pi * radius cubed.
+		volume = 1.333333333333333 * PI * radius * radius * radius;
+	}
+	//Function here to return the circumference variable.
+	double GiveCircumference() {
+
+		//Returning the private variable circumference.
+		return circumference;
+	}
+	//Function here to return the surfaceArea variable.
+	double GiveSurfaceArea() {
+
+		//Returning the private variable surfaceArea.
+		return surfaceArea;
+	}
+	//Function here to return the volume variable.
+	double GiveVolume() {
+
+		//Returning the private variable volume.
+		return volume;
+	}
+
+//private portion may not be access by the main script.
+private:
+
+	//Generating variables for Sphere class.
+	double circumference;
+	double surfaceArea;
+	double volume;
+
+};
+int main() {
+	
+	//Classes.
+	//Classes are akin to structs but differ in a few key details:
+	//Classes may have public or private portions but are default as private while struct are always public.
+	//Classes are able to inherit variables from the public portion of fellow classes.
+	//Classes may have constructors and destructors.
+
+	//Here there is a pointer instance to the Cube class.
+	//Using this there may be multiple instances.
+	Cube* cube = new Cube;
+	//Here there is an instance of the sphere class.
+	Sphere sphere;
+
+	//Explaining to the user that Tetrahedron::x is about to be set to 12.
+	std::cout << "Setting tetrahedron::x to 12" << std::endl;
+
+	//Setting tetrahedron.x to 12 to display that all instances of x are affected.
+	Tetrahedron::x = 12;
+	std::cout << "Tetrahedron x: " << tetrahedron.x << std::endl;
+	std::cout << "Cube x: " << tetrahedron.x << std::endl;
+	std::cout << "Sphere x: " << tetrahedron.x << std::endl << std::endl;
+
+	//Explaining to the user that Sphere::x is about to be set to 8.
+	std::cout << "Setting Sphere::x to 8" << std::endl;
+	//Setting sphere.x to 8 to display that this script can change the static variable in another script.
+	Sphere::x = 8;
+	std::cout << "Tetrahedron x: " << tetrahedron.x << std::endl;
+	std::cout << "Cube x: " << tetrahedron.x << std::endl;
+	std::cout << "Sphere x: " << tetrahedron.x << std::endl << std::endl;
+
+	//Prompting the user to enter the length of each shape.
+	std::cout << "Enter length of objects: ";
+	//Obtaining the user input.
+	std::cin >> tetrahedron.length;
+	//Skipping a line.
+	std::cout << std::endl;
+
+	//The -> is a structure dereference
+	//This points to the length variable of the cube object.
+	//Setting length in cube to tetrahedron.length.
+	cube->length = tetrahedron.length;
+	//Setting length in sphere to tetrahedron.length.
+	sphere.length = tetrahedron.length;
+
+	//Calling function to set edgeLength of the tetrahedron.
+	tetrahedron.SetEdgeLength(tetrahedron.length);
+	//Calling function to set edgeLength of the cube.
+	cube->SetEdgeLength(cube->length);
+	//Calling function to set radius of the sphere.
+	sphere.SetRadius(sphere.length);
+
+	//Setting tetrahedron height, surfaceArea, and volume.
+	tetrahedron.SetHeight();
+	tetrahedron.SetSurfaceArea();
+	tetrahedron.SetVolume();
+
+	//Setting *cube surfaceArea and volume.
+	cube->SetSurfaceArea();
+	cube->SetVolume();
+
+	//Setting sphere circumference, surfaceArea, and volume
+	sphere.SetCircumference();
+	sphere.SetSurfaceArea();
+	sphere.SetVolume();
+
+	//Displaying values of tetrahedrons variables.
+	std::cout << "Tetrahedrons side length: " << tetrahedron.length << std::endl;
+	std::cout << "Tetrahedrons height: " << tetrahedron.GiveHeight() << std::endl;
+	std::cout << "Tetrahedrons surface area: " << tetrahedron.GiveSurfaceArea() << std::endl;
+	std::cout << "Tetrahedrons volume: " << tetrahedron.GiveVolume() << std::endl << std::endl;
+
+	//Displaying values of cubes variables.
+	std::cout << "Cube side length: " << cube->length << std::endl;
+	std::cout << "Cube diagonal length: " << cube->GiveDiagonalLength() << std::endl;
+	std::cout << "Cubes surface area: " << cube->GiveSurfaceArea() << std::endl;
+	std::cout << "Cubes volume: " << cube->GiveVolume() << std::endl << std::endl;
+
+	//Displaying values of spheres variables.
+	std::cout << "Sphere diameter: " << sphere.length << std::endl;
+	std::cout << "Sphere radius: " << sphere.radius << std::endl;
+	std::cout << "Spheres circumference: " << sphere.GiveCircumference() << std::endl;
+	std::cout << "Spheres surface area: " << sphere.GiveSurfaceArea() << std::endl;
+	std::cout << "Spheres volume: " << sphere.GiveVolume() << std::endl;
+
+	//Deleting pointer cube.
+	delete cube;
+
+	return 0;
+}
