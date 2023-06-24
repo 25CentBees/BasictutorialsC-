@@ -39,6 +39,14 @@ int main() {
 			std::cout << cAraay[j][i] << "\n";
 		}
 	}
+	//Skipping a line.
+	std::cout << "\n";
+	//This type of loop allows access to an array by allowing a variable to directly inherit the elements of an array.
+	for(int i : aArray){
+	
+		//Displaying the contents of the inherited array.
+		std::cout << i << "\n";
+	}
 
 	return 0;
 }
